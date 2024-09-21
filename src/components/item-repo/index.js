@@ -1,11 +1,11 @@
 import styled from "styled-components"
 
-export default function ItemRepo () {
+export default function ItemRepo ({repo}) {
     return (
         <ItemContainer>
-            <h3>Teste</h3>
-            <p>dio/fernando</p>
-            <a href="#">ver repositorio</a> <br/>
+            <h3>{repo.name}</h3>
+            <p>{repo.full_name}</p>
+            <a href={repo.html_url} rel="noreferrer" target="_blank">ver repositorio</a> <br/>
             <a className="remover" href="#">remover</a>
             <hr/>
         </ItemContainer>
@@ -23,6 +23,12 @@ const ItemContainer = styled.div`
     p {
         font-size: 1rem;
         color: #fafafa60;
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: #AAFF00;
     }
 
     a.remover {

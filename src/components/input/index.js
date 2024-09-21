@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-export default function Input () {
+export default function Input ({value, onChange}) {
     return (
         <InputContainer>
-            <input></input>
+            <input value={value} onChange={onChange}/>
         </InputContainer>
     )
 }
@@ -17,7 +17,7 @@ const InputContainer = styled.div`
 
     input {
         background: transparent;
-        border: 0;
+        border: none;
         width: 100%;
         height: 100%;
         padding: 0 0.3rem;
